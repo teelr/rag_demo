@@ -7,8 +7,6 @@ from langchain.text_splitter import CharacterTextSplitter
 from langchain.chains import RetrievalQA
 from langchain.prompts import PromptTemplate
 
-from langchain_community.vectorstores import Chroma
-
 def run_rag(question: str):
     # Establish base path
     base_dir = Path(__file__).resolve().parent.parent  # -> /home/rich/projects/rag_demo
