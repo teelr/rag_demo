@@ -1,5 +1,4 @@
 {
-  "python.defaultInterpreterPath": "/home/rich/miniconda3/envs/ai_dev/bin/python",
   "python.analysis.typeCheckingMode": "basic",
   "python.analysis.extraPaths": ["./src"],
   "python.linting.enabled": true,
