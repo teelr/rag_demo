@@ -1,11 +1,13 @@
 from pathlib import Path
-from langchain_community.document_loaders import TextLoader
-from langchain_ollama.embeddings import OllamaEmbeddings
-from langchain_ollama.llms import OllamaLLM
-from langchain_community.vectorstores import Chroma
-from langchain.text_splitter import CharacterTextSplitter
+
 from langchain.chains import RetrievalQA
 from langchain.prompts import PromptTemplate
+from langchain.text_splitter import CharacterTextSplitter
+from langchain_community.document_loaders import TextLoader
+from langchain_community.vectorstores import Chroma
+from langchain_ollama.embeddings import OllamaEmbeddings
+from langchain_ollama.llms import OllamaLLM
+
 
 def run_rag(question: str):
     # Establish base path
@@ -24,7 +26,7 @@ def run_rag(question: str):
         model="nomic-embed-text",
         base_url="http://100.82.174.94:11434"
     )
-    vectordb = Chroma.from_documents(documents=docs, embedding=embeddings, persist_directory=str(persist_dir))
+    vectordb = Chroma.from_documents(documents=docs, embedding=embeddings, persist_directory=str(persist_dir))  # noqa: E501
 
     # Set up LLM and retriever
     llm = OllamaLLM(
